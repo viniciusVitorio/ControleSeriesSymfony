@@ -3,10 +3,10 @@
 {% block title %} Adicionar Série {% endblock %}
 
 {% block body %}
-  <form>
+  <form method="post">
     <div class="mb-3 mt-4">
       <label for="name" class="form-label display-6">Nome da série: </label>
-      <input type="text" class="form-control"/>
+      <input type="text" name="name" class="form-control"/>
     </div>
       <input type="submit" class="btn btn-dark" value="Enviar"/>
   </form>  

@@ -8,32 +8,31 @@ use Doctrine\ORM\Mapping as ORM;
 #[ORM\Entity(repositoryClass: SeriesRepository::class)]
 class Series
 {
-    #[ORM\Id]
-    #[ORM\GeneratedValue]
+  #[ORM\Id]
+  #[ORM\GeneratedValue]
+  #[ORM\Column]
+  private int $id;
+
+  public function __construct(
     #[ORM\Column]
-    private ?int $id = null;
+    private string $name
+  ) {
+  }
 
+  public function getId(): ?int
+  {
+    return $this->id;
+  }
 
-    public function __construct(
-        #[ORM\Column]
-        private ?string $name
-    ) {
-    }
+  public function getName(): string
+  {
+    return $this->name;
+  }
 
-    public function getId(): ?int
-    {
-        return $this->id;
-    }
+  public function setName(string $name): self
+  {
+    $this->name = $name;
 
-    public function getName(): ?string
-    {
-        return $this->name;
-    }
-
-    public function setName(string $name): static
-    {
-        $this->name = $name;
-
-        return $this;
-    }
+    return $this;
+  }
 }

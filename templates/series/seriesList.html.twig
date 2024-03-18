@@ -9,7 +9,7 @@
 <a href="series/add" class="btn btn-dark mb-3">Adicionar</a>
 <ul class="list-group">
     {% for serie in seriesList %}
-        <li class="list-group-item">{{serie}}</li>
+        <li class="list-group-item">{{serie.name}}</li>
     {% endfor %}
 </ul>
 {% endblock %}
